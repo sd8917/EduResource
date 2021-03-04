@@ -1,0 +1,98 @@
+{% extends 'header.html' %}
+{% load custom_filters %}
+{% load static %}
+
+{% block title %}
+    {{product.name}}
+{% endblock title %}
+    
+{% block content %}
+
+<div class="container mt-4 p-4">
+    <style>
+        
+    </style>
+    <div class="row">
+        <div class="col">
+            <img id="mainImage" class="img-fluid rounded border" src="{{product.thumbnail.url}}">
+            <hr>
+            <div class="row">
+                
+                {% for image in images %}
+                    <div class="col">
+                        <img onclick="changeImage(event)" src="{{image.image.url}}" class="img-thumbnail"> 
+                    </div>     
+                {% endfor %}
+                
+            </div>
+            
+        </div>
+    
+        <div class="col">
+            <h1 class="display-4">{{product.name}}</h1>
+            <hr>
+            <p class="display-8 badge badge-warning"><b>Save {{ product.discount }} %</b></p>
+
+            {% if product|sale_price == 0 %}
+                <h4>Price <del>{{product.price |rupee}}</del>&nbsp;<p class="badge badge-info">Free</p></h4>
+            {% else %}
+                <h4>Price <del>{{product.price |rupee}}</del>&nbsp; {{product|sale_price|rupee}}</h4>
+                <!-- {{download_url}} -->
+            {% endif %}
+            <br>
+            
+            
+            {% if can_download %}  
+                <span class="badge badge-success">paid</span>
+                <a class="btn btn-info" target="_black" href="/download/paidproduct/{{product.id}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                      </svg>
+                      
+                    Download Now</a>
+            {% else %}
+                {% if product|sale_price == 0 %}
+                    <a target="_blank" href="/download-free/{{product.id}}"class="btn btn-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                          </svg>
+
+                        Download free</a>  
+                {% else %}
+
+                    <a  href="/create-payment/{{product.id}}" class="btn btn-info"> 
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                          </svg>
+
+                     Download Now</a>
+                {% endif %}
+
+            {% endif %}
+                
+               
+                
+            <hr>
+            <p><b>Description :</b></p>
+            <p>
+                {{ product.description}}
+            </p>
+        </div>
+    
+    </div>
+    <hr>
+</div>
+
+
+<script src="{% static 'shop/js/product_details.js' %}"> </script>
+
+{% endblock content %}
+
+  
+    
+
+    
