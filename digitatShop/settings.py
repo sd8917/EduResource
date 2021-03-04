@@ -25,7 +25,7 @@ SECRET_KEY = 'm4c&928+lm^cixh36)v)(c#jk^h8z4@78o*o=cgm2+vx-&e7-&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1','eduresource.herokuapp.com/']
 
 
 # Application definition
