@@ -15,3 +15,6 @@ def index(request):
 def logout(request):
     request.session.clear()
     return redirect('home')
+
+def about(request):
+    return render(request, 'about.html')

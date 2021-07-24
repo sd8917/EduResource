@@ -1,0 +1,99 @@
+
+/* // scroll bar */
+/* width */
+::-webkit-scrollbar {
+  background-color: #ccc;
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #39C0ED;
+  box-shadow: 0 0 3px #39C0ED;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: hsl(235, 21%, 11%);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(220, 98%, 61%);
+}
+
+
+.card{
+    box-shadow: 0 0 8px #ccc;
+}
+
+.card:hover{
+    box-shadow: 0 0 4px #ccc;
+}
+.card-img-top{
+    height: 180px;
+}
+#logo{
+    width: 40px;
+    height: 40px;
+}
+.list-wrapper{
+    display: flex;
+    padding: 20px 100px;
+}
+.navbar-nav{
+    margin-left: 160px;
+}
+.nav-item:hover{
+    background-color: rgb(12, 12, 11);
+    border-radius: 10px;
+    color: white;
+}
+.nav-link{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#carouselExampleControls{
+    width: 85%;
+    margin: 20px auto;
+    border-radius: 50px;
+}
+.carousel-inner{
+    border-radius: 20px;
+}
+.carousel-item > img{
+    width: 100%;
+    height: 300px;
+}
+
+/*About page start */
+.about{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+.img-wrapper{
+    width: 100px;
+    height: 100px;
+}
+
+.about-detail{
+    width: 60%;
+}
+
+.img-wrapper > img{
+    border-radius: 10px;
+}
+/*About page end */
+
+/* footer */
+#footer-contain{
+    display: flex;
+    justify-content: center;
+}
+.navbar{
+    padding: 20px 100px;
+}

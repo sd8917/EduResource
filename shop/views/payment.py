@@ -6,7 +6,7 @@ from digitatShop.settings import PAYMENT_API_KEY,PAYMENT_API_AUTH_TOKEN
     
 import math
 API = Instamojo(api_key=PAYMENT_API_KEY,
-                auth_token=PAYMENT_API_AUTH_TOKEN)
+                auth_token=PAYMENT_API_AUTH_TOKEN,endpoint='https://test.instamojo.com/api/1.1/')
 
 def createPayment(request, product_id):
 

@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'm4c&928+lm^cixh36)v)(c#jk^h8z4@78o*o=cgm2+vx-&e7-&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','*']
+ALLOWED_HOSTS =  ['127.0.0.1','*','https://downloadbookapp.herokuapp.com/']  #  ['127.0.0.1','*']
 
 
 # Application definition
@@ -130,6 +130,7 @@ EMAIL_SENDER_NAME = "Sudhanshu digiShop"
 EMAIL_SENDER_EMAIL = "sid9123145982@gmail.com"
 EMAIL_API_KEY = "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"
 
-#for test environment
+# #for test environment
 PAYMENT_API_KEY = 'test_e09cae4405d3ca2020d6bf3da6f'
 PAYMENT_API_AUTH_TOKEN = 'test_24d03bff4f6396039ad16c30053'
+

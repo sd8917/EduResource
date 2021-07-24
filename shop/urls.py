@@ -15,6 +15,7 @@ from shop.views.reset_password import ResetPassword,PasswordResetVerification,ve
 urlpatterns = [
     
     path('', index.index,name='home'),
+    path('about/',index.about,name='about'),
     path('logout/',index.logout,name='logout'),
     path('orders/', login_required(my_orders),name='orders'),
 
